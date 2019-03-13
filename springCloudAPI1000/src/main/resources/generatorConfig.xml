@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context defaultModelType="flat" id="Mysql" targetRuntime="MyBatis3Simple">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.BaseMapper"/>
+        </plugin>
+
+        <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/springclouddb01?useUnicode=true"
+                        driverClass="com.mysql.jdbc.Driver"
+                        password="123456"
+                        userId="root">
+        </jdbcConnection>
+
+        <!--entity地址-->
+        <javaModelGenerator targetPackage="com.qxSpringCloud.entity" targetProject="src/main/java"/>
+
+        <!--mapper的xml文件地址-->
+        <sqlMapGenerator targetPackage="mapping" targetProject="src/main/resources/"/>
+
+        <!--mapper接口地址-->
+        <javaClientGenerator targetPackage="com.qxSpringCloud.dao" targetProject="src/main/java" type="XMLMAPPER"/>
+
+        <table tableName="dept">
+            <!--mysql 配置-->
+            <generatedKey column="id" identity="true" sqlStatement="Mysql"/>
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+    </context>
+</generatorConfiguration>

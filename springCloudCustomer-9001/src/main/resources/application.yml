@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: springCloudCustomer
+
+server:
+  port: 9001
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eurekaServer7003:7003/eureka/,http://eurekaServer7001:7001/eureka/,http://eurekaServer7002:7002/eureka/
+  instance:
+    prefer-ip-address: true

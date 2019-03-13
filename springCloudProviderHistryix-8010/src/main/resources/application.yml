@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: springCloudProvide
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springclouddb01?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      test-on-borrow: true
+      stat-view-servlet:
+        allow: true
+        login-password: 123456
+        login-username: admin
+server:
+  port: 8010
+
+mybatis:
+  mapper-locations: classpath*:/mapping/*.xml
+  configuration:
+    mapUnderscoreToCamelCase: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eurekaServer7003:7003/eureka/,http://eurekaServer7001:7001/eureka/,http://eurekaServer7002:7002/eureka/
+  instance:
+    prefer-ip-address: true
+#    instance-id: springCloudProvideHistry8010
