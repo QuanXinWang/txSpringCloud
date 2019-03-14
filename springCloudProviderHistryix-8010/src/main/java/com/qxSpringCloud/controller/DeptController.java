@@ -1,6 +1,5 @@
 package com.qxSpringCloud.controller;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.qxSpringCloud.entity.Dept;
 import com.qxSpringCloud.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;

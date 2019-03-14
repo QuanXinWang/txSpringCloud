@@ -14,6 +14,7 @@
         <module>springCloudCustomer-9001</module>
         <module>springCloudFeign-9010</module>
         <module>springCloudCommon</module>
+        <module>SpringCloudConsumerHystrixDashboard</module>
         <module>springCloudProviderHistryix-8010</module>
     </modules>
     <parent>
